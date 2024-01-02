@@ -1,0 +1,48 @@
+<div class="container">
+  <form [formGroup]="addStore" (ngSubmit)="sumbitData()">
+
+    <div class="mb-3 row">
+      <label for="formFile" class="form-label">Attach App Store Logo</label>
+      <input class="form-control" (change)="onFileSelection($event)" type="file" id="formFile">
+    </div>
+
+    <!-- <div class="mb-3 row">
+        <label for="formFileMultiple" class="form-label">Attach App Store Image</label>
+        <input class="form-control" formControlName="DISPLAY_IMG" type="file" id="formFileMultiple" multiple>
+      </div> -->
+
+    <div class="mb-3 row">
+      <label for="formFileMultiple" class="form-label">company_name</label>
+      <input class="form-control" formControlName="company_name" type="text" id="formFileMultiple" multiple>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputQualification1" class="form-label">Store Type:</label> <br>
+      <span *ngFor="let h of checkBoxArr">
+        <input type="checkbox" formControlName="checkBox" [value]="h" (click)="selectCheckBox($event)">{{h}}
+      </span>
+      <!-- <input type="checkbox" formControlName="checkBox" value="checkBox"> D2C_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="checkBox"> D2C_REGSTRATN_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="checkBox"> D2C_LOGIN_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="checkBox"> B2B_LOGIN_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="B2B_FLG"> B2B_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="B2B_BO_REGSTRATN_FLG"> B2B_BO_REGSTRATN_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="LASTMILE_DLVRY_FLG"> LASTMILE_DLVRY_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="SERVICES_FLG"> SERVICES_FLG <br>
+      <input type="checkbox" formControlName="checkBox" value="DOC_APP_ALSO_MARKETPLACE_FLG"> DOC_APP_ALSO_MARKETPLACE_FLG -->
+    </div>
+
+    <div class="mb-3 row">
+      <label for="formFileMultiple" class="form-label">Tagline</label>
+      <input class="form-control" formControlName="tagline1" type="text" id="formFileMultiple" multiple>
+    </div>
+    <div class="mb-3 row">
+      <label for="formFileMultiple" class="form-label">Tagline 2</label>
+      <input class="form-control" formControlName="tagline2" type="text" id="formFileMultiple" multiple>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
