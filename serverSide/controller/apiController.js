@@ -40,9 +40,9 @@ exports.store = async (req, res) => {
 exports.getStore = async (req, res) => {
     try {
         const stores = await storeModel.find()
-        res.status(200).json({ success: true, msg: "Users fetch Successfully", data: stores, status: true })
+        res.status(200).json({ success: true, msg: "data added successfully", data: stores, status: true })
     } catch (error) {
-        res.status(201).json({ success: false, msg: "Users Not fetch" })
+        res.status(201).json({ success: false, msg: "data not added" })
 
     }
 }

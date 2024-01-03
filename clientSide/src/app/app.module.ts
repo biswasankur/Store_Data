@@ -7,11 +7,19 @@ import { StoreAddComponent } from './Components/store-add/store-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreService } from './Service/store.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ECommersComponent } from './components/e-commers/e-commers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoreAddComponent
+    StoreAddComponent,
+    LoginComponent,
+    RegistrationComponent,
+    DashboardComponent,
+    ECommersComponent
   ],
   imports: [
     BrowserModule,
