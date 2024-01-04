@@ -2,7 +2,9 @@
     <div class="row no-gutters">
         <ng-container *ngFor="let data of AllData">
       <div class="col-md-4">
-        <img src={{img_path}}{{data?.logo}} alt="...">
+        <img src={{img_path}}{{data?.photo}} alt="...">
+        <!-- <p>img_url {{img_path}}{{data?.photo}}</p> -->
+        <!-- <p><img src="{{img_path}}{{data?.logo}}" alt=""></p> -->
       </div>
       <div class="col-md-8">
         <div class="card-body">

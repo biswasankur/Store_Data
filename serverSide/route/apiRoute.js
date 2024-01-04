@@ -1,29 +1,20 @@
 const express = require('express');
 const Route = express.Router()
 const ApiController = require('../controller/apiController')
-const multer= require('multer')
+const logoimage = require("../middleware/company_logo")
 
 
-const Storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        
-        callback(null, "./upload");
-    },
-    filename: (req, file, callback) => {
-        callback(null,file.originalname);
-    }
-});
-
-const uploadFile = multer({
-    storage: Storage
-});
 
 
-Route.post('/add-store',uploadFile.any(),ApiController.store)
+
+Route.post('/add-store',logoimage.single('photo'), ApiController.store)
 Route.get('/get-store',ApiController.getStore)
 
-Route.post('/signUp',uploadFile.any(),ApiController.signUp)
+Route.post('/signUp',ApiController.signUp)
 Route.post('/signIn',ApiController.signIn)
+
+Route.get('/single/:id',ApiController.single)
+
 
 
 

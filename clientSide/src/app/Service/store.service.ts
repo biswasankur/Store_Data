@@ -12,6 +12,8 @@ export class StoreService {
 
   registation_api: string = "http://localhost:2100/signUp";
   login_api: string = "http://localhost:2100/signIn";
+
+  single_api:string="http://localhost:2100/single"
   
    constructor(private http:HttpClient) { }
 
@@ -36,4 +38,9 @@ export class StoreService {
    getStore():Observable<any>{
      return this.http.get<any>(this.getstoreapi)
    }
+
+
+   single_data_fetch(id: any): Observable<any> {
+    return this.http.get<any>(`${this.single_api}/${id}`)
+  }
 }

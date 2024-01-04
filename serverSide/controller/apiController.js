@@ -3,6 +3,7 @@ const UserModel = require('../model/user');
 const config = require('../config/config');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const path= require('path')
 
 
 exports.store = async (req, res) => {
@@ -11,22 +12,12 @@ exports.store = async (req, res) => {
         const addstore = await new storeModel({
             tagline1: req.body.tagline1,
             tagline2: req.body.tagline2,
-            checkBox: req.body.checkBox,
-            // D2C_FLG: req.body.D2C_FLG,
-            // D2C_REGSTRATN_FLG: req.body.D2CREGSTRATNFLG,
-            // D2C_LOGIN_FLG: req.body.D2C_LOGIN_FLG,
-            // B2B_LOGIN_FLG: req.body.B2B_LOGIN_FLG,
-            // B2B_FLG: req.body.B2B_FLG,
-            // B2B_BO_REGSTRATN_FLG: req.body.B2B_BO_REGSTRATN_FLG,
-            // LASTMILE_DLVRY_FLG: req.body.LASTMILE_DLVRY_FLG,
-            // SERVICES_FLG: req.body.SERVICES_FLG,
-            // DOC_APP_ALSO_MARKETPLACE_FLG: req.body.DOC_APP_ALSO_MARKETPLACE_FLG,
-            logo: req.files[0].filename,
-            // LOGO: req.body.LOGO,
+            checkBox: req.body.checkBox,           
             company_name: req.body.company_name,
-            // display_img:req.files[1].filename
-
         })
+        if(req.file){
+            addstore.photo=req.file.path
+           }
         const responce = await addstore.save()
         res.status(201).json({ success: true, msg: "store Added Successfully", data: responce, status: 201 })
 
@@ -117,3 +108,19 @@ exports.signIn = async (req, res) => {
     }
 
 }
+
+
+//====================================single data fatch============================================================
+
+exports.single = async (req, res) => {
+    try {
+        const single_id = await storeModel.findById(req.params.id)
+        console.log(single_id);
+        res.status(200).json({ success: true, msg: 'single data fetch successfilly..!', data: single_id, status: 200 })
+
+    } catch (error) {
+        res.status(201).json({ success: false, msg: 'data not fetched..!' })
+
+    }
+}
+

@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ECommersComponent } from './components/e-commers/e-commers.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   // {path:"", redirectTo:"add-store", pathMatch:"full"},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegistrationComponent},
   {path:"e_commers",component:ECommersComponent},
-  {path:"dashboard",component:DashboardComponent}
+  {path:"dashboard",component:DashboardComponent},
+  {path:"details/:id",component:DetailsComponent}
 ];
 
 @NgModule({

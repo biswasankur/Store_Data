@@ -14,6 +14,11 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+app.use('/uploads',express.static('uploads'))
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // app.use('/upload', express.static(path.join(__dirname, 'upload')))
@@ -50,7 +55,6 @@ app.use(bodyparser.json());
 app.use(ApiRoute)
 
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(dbLink, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {

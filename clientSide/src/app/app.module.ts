@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ECommersComponent } from './components/e-commers/e-commers.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ECommersComponent } from './components/e-commers/e-commers.component';
     LoginComponent,
     RegistrationComponent,
     DashboardComponent,
-    ECommersComponent
+    ECommersComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

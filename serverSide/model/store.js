@@ -54,12 +54,12 @@ const storeSchema = new Schema({
     //     type: String,
     //     required: true
     // },
-    checkBox: {
-        type: Array,
-        required: true
-    },
+    // checkBox: {
+    //     type: Array,
+    //     required: true
+    // },
 
-    logo: {
+    photo: {
         type: String,
         required: true
     },
