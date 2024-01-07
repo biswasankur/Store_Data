@@ -38,6 +38,8 @@ export class RegistrationComponent implements OnInit {
     console.log("image:", this.setectedImg);
 
   }
+
+
   onSubmit() {
     console.log("Form value Recived:", this.registaionInputValue.value);
 
