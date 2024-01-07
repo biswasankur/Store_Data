@@ -74,7 +74,7 @@ export class StoreAddComponent {
 
     this.StoreSer.addStore(formData).subscribe((res: any) => {
       console.log("post data:", res.data);
-      alert("data successfully");
+      alert("data added successfully...!");
       this.route.navigate(['/dashboard'])
     })
 

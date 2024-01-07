@@ -8,3 +8,8 @@
 .container{
     margin: auto;
 }
+.card{
+    margin-right: 70px;
+    margin-left: 50px;
+    margin-top: 20px;
+}

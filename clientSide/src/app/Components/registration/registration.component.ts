@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
       console.log("Responce after post:", res);
       if (res.status == 200) {
         alert(res.msg);
-        this.route.navigate(['/login'])
+        this.route.navigateByUrl('/login')
       } else {
         alert(res.msg)
             }
