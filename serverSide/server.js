@@ -21,37 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-// app.use('/upload', express.static(path.join(__dirname, 'upload')))
 
-// const fileStorage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, 'upload')
-//     }, filename: (req, file, cb) => {
-//         cb(null, file.originalname)
-//     }
-// })
-
-// const fileFilter = (req, file, cb) => {
-//     if (file.mimetype.includes("png") ||
-//         file.mimetype.includes("jpg") ||
-//         file.mimetype.includes("webp") ||
-//         file.mimetype.includes("jpeg")) {
-//         cb(null, true)
-//     }
-//     else {
-//         cb(null, false)
-//     }
-// }
-// app.use(multer({
-//     storage: fileStorage, fileFilter: fileFilter, limits: {
-//         fieldSize: 1024 * 1024 * 5
-//     }
-// }).single('image'))
-
-
-
-
-// app.use(auth.veryfyToken)
 app.use(ApiRoute)
 
 

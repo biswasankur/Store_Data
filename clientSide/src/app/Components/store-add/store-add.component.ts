@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StoreService } from 'src/app/Service/store.service';
 
 @Component({
@@ -23,22 +24,15 @@ export class StoreAddComponent {
   ]
   selectedCheck: string[] = [];
   setectedImg!: File;
-  constructor(private StoreSer: StoreService) { }
+  constructor(private StoreSer: StoreService,
+    private route:Router
+    ) { }
 
   ngOnInit(): void {
     this.addStore = new FormGroup({
-      logo: new FormControl(""),
+      // photo: new FormControl(""),
       checkBox: new FormControl(""),
 
-      // D2C_FLG: new FormControl(""),
-      // D2CREGSTRATNFLG: new FormControl(""),
-      // D2C_LOGIN_FLG: new FormControl(""),
-      // B2B_LOGIN_FLG: new FormControl(""),
-      // B2B_FLG: new FormControl(""),
-      // B2B_BO_REGSTRATN_FLG: new FormControl(""),
-      // LASTMILE_DLVRY_FLG: new FormControl(""),
-      // SERVICES_FLG: new FormControl(""),
-      // DOC_APP_ALSO_MARKETPLACE_FLG: new FormControl(""),
 
       company_name: new FormControl(""),
       // check: new FormControl(""),
@@ -76,11 +70,12 @@ export class StoreAddComponent {
     formData.append('tagline2', this.addStore.value.tagline2)
     formData.append('checkBox', this.addStore.value.checkBox)
     
-    formData.append('logo', this.setectedImg, this.setectedImg.name)
+    formData.append('photo', this.setectedImg, this.setectedImg.name)
 
     this.StoreSer.addStore(formData).subscribe((res: any) => {
       console.log("post data:", res.data);
       alert("data successfully");
+      this.route.navigate(['/dashboard'])
     })
 
   }

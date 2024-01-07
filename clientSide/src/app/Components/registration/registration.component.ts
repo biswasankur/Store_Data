@@ -19,10 +19,7 @@ export class RegistrationComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.registaionInputValue = new FormGroup({
-      // name: new FormControl(''),
-      // email: new FormControl(''),
-      // contact: new FormControl(''),
-      // password: new FormControl(''),
+      
 
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Z]{1}[a-z]{2,}$")]),
       email: new FormControl('', [Validators.required, Validators.pattern("([a-z0-9.-]+)@([a-z]{2,15}).([a-z.]{2,10})$")]),
@@ -54,7 +51,7 @@ export class RegistrationComponent implements OnInit {
     this.UserSer.register(formData).subscribe((res: any) => {
       console.log("Responce after post:", res);
       if (res.status == 200) {
-        alert(res.message);
+        alert(res.msg);
         this.route.navigate(['/login'])
       } else {
         alert(res.msg)

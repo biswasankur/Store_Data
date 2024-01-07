@@ -11,14 +11,14 @@ export class DashboardComponent implements OnInit {
 AllData:any
 img_path: any = "";
   baseUrl: string = "http://localhost:2100/"
-  folderPath: string="uploads/"
+  // folderPath: string="uploads/"
 
 constructor( private store:StoreService){}
   ngOnInit(): void {
     this.store.getStore().subscribe((res:any)=>{
       console.log(res.data,"AllData");
       this.AllData=res.data
-      this.img_path= this.baseUrl + this.folderPath
+      this.img_path= this.baseUrl 
       console.log(this.img_path);
       
 

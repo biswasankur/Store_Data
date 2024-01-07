@@ -1,18 +1,25 @@
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-        <ng-container *ngFor="let data of AllData">
-      <div class="col-md-4">
-        <img src={{img_path}}{{data?.photo}} alt="...">
-        <!-- <p>img_url {{img_path}}{{data?.photo}}</p> -->
-        <!-- <p><img src="{{img_path}}{{data?.logo}}" alt=""></p> -->
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-            <a href="">{{data.company_name}}</a>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="container">
+  <h3 style="text-align: center;">Company Dashboard</h3>
+  <div class="row">
+    <ng-container *ngFor="let data of AllData">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+            <img src={{img_path}}{{data?.photo}} class="card-img-top rounded-circle" alt="Logo">
+            <!-- <img class="rounded-circle" alt="avatar2" src={{img_path}}{{data?.photo}} /> -->
+
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <!-- <a routerLink="/details/{{data._id}}">{{data.company_name}}</a> -->
+              <a href="https://www.samsung.com/">{{data.company_name}}</a>
+              <p class="card-text">{{data?.tagline1}}</p>
+              <p class="card-text"><small class="text-muted"><b>{{data?.tagline2}}</b></small></p>
+            </div>
+          </div>
         </div>
       </div>
     </ng-container>
-    </div>
   </div>
+</div>

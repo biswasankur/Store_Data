@@ -23,13 +23,13 @@ export class StoreService {
 
   loginUser(loginData: any): Observable<any> {
     return this.http.post<any>(this.login_api, loginData)
-    .pipe(catchError(this.errorHandler))
+    // .pipe(catchError(this.errorHandler))
   }
 
   //error Handler
-  errorHandler(error: HttpErrorResponse) {
-    return throwError(() => error || "Server Error")
-  }
+  // errorHandler(error: HttpErrorResponse) {
+  //   return throwError(() => error || "Server Error")
+  // }
 
  
    addStore(formData:any):Observable<any>{
