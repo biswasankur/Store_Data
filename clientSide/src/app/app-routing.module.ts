@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ECommersComponent } from './components/e-commers/e-commers.component';
 import { DetailsComponent } from './components/details/details.component';
 import { authGuardGuard } from './Authentication/auth-guard.guard';
+import { PaymentdetailsComponent } from './components/paymentdetails/paymentdetails.component';
 
 const routes: Routes = [
   // {path:"", redirectTo:"add-store", pathMatch:"full"},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"e_commers",component:ECommersComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"details/:id",component:DetailsComponent},
+  {path:"payment",component:PaymentdetailsComponent}
   // {path:"e_commers",component:ECommersComponent, canActivate:[authGuardGuard]},
   // {path:"dashboard",component:DashboardComponent, canActivate:[authGuardGuard]},
   // {path:"details/:id",component:DetailsComponent, canActivate:[authGuardGuard]}

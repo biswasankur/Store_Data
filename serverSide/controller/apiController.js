@@ -98,6 +98,7 @@ exports.store = async (req, res) => {
             tagline2: req.body.tagline2,
             checkBox: req.body.checkBox,
             company_name: req.body.company_name,
+            store_url: req.body.store_url,
             // photo: req.files[0].filename,
 
         })

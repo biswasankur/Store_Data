@@ -38,6 +38,7 @@ export class StoreAddComponent {
       // check: new FormControl(""),
       tagline1: new FormControl(""),
       tagline2: new FormControl(""),
+      store_url: new FormControl(""),
     })
   }
   selectCheckBox(e: any) {
@@ -69,8 +70,10 @@ export class StoreAddComponent {
     formData.append('tagline1', this.addStore.value.tagline1)
     formData.append('tagline2', this.addStore.value.tagline2)
     formData.append('checkBox', this.addStore.value.checkBox)
+    formData.append('store_url', this.addStore.value.store_url)
     
     formData.append('photo', this.setectedImg, this.setectedImg.name)
+
 
     this.StoreSer.addStore(formData).subscribe((res: any) => {
       console.log("post data:", res.data);

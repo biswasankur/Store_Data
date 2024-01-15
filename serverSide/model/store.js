@@ -74,6 +74,10 @@ const storeSchema = new Schema({
     //     type: String,
     //     required: true
     // },
+    store_url:{
+        type : String ,
+        required: true
+     },
 
 
 

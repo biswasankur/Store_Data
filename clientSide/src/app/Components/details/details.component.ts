@@ -9,6 +9,7 @@ import { StoreService } from 'src/app/Service/store.service';
 })
 export class DetailsComponent implements OnInit {
   single_id: any
+  single_data: any
   constructor(private store: StoreService,
     private actived: ActivatedRoute) { }
   ngOnInit(): void {
@@ -16,6 +17,7 @@ export class DetailsComponent implements OnInit {
       this.single_id = params.get('id')
       this.store.single_data_fetch(this.single_id).subscribe((value:any)=>{
         console.log("Single Data", value.data);
+        this.single_data=value.data
       })
     })
   }
