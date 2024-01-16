@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ECommersComponent } from './components/e-commers/e-commers.component';
 import { DetailsComponent } from './components/details/details.component';
 import { PaymentdetailsComponent } from './components/paymentdetails/paymentdetails.component';
+import { KYCComponent } from './components/kyc/kyc.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PaymentdetailsComponent } from './components/paymentdetails/paymentdeta
     DashboardComponent,
     ECommersComponent,
     DetailsComponent,
-    PaymentdetailsComponent
+    PaymentdetailsComponent,
+    KYCComponent
   ],
   imports: [
     BrowserModule,
