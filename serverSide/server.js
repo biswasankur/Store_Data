@@ -8,7 +8,8 @@ const path = require('path')
 const app = express();
 const port = process.env.PORT || 2100
 const ApiRoute = require('./route/apiRoute')
-const dbLink = "mongodb+srv://souvikdb:1V8UhcbKfOpXCGpS@cluster0.bsndvpo.mongodb.net/VegetablesAndFruits";
+// const dbLink = "mongodb+srv://souvikdb:1V8UhcbKfOpXCGpS@cluster0.bsndvpo.mongodb.net/VegetablesAndFruits";
+const dbLink = "mongodb+srv://souvikdb:1V8UhcbKfOpXCGpS@cluster0.bsndvpo.mongodb.net/inventory-manage";
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));

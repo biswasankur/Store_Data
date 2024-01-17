@@ -1,0 +1,42 @@
+<div>
+    <h3 class="left">Publisher Dashboard</h3>
+    <div class="right">
+        <h2 class="invent">Manage User Inventory</h2>
+        <p class="role">Role: <input type="text" class="role">
+
+        </p>
+        <p>Manage Inventory</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial #</th>
+                    <th>User id</th>
+                    <th>User Name</th>
+                    <th>Detail of Inventory</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of showInv let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{data._id.toString().slice(20,24)}}</td>
+                    <td>{{data.name}}</td>
+
+                    <td><a routerLink="details/{{data._id}}">
+                            <button class="editable">View Detail</button></a>
+                    </td>
+                    <td><a routerLink="/inventory-Add">
+                            <button class="addtable">Add New</button></a>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+<br><br>
+
+
+<router-outlet></router-outlet>
+<br><br>

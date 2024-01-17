@@ -1,0 +1,31 @@
+.right{
+    float: right;
+    margin-right: 20px;
+    width: 73%;
+/* margin-left: 200px; */
+border: 0.2px solid black;
+margin-top: 5px;
+}
+.rig{
+    float: right;
+    /* margin-right: 20px; */
+    width: 73%;
+/* margin-left: 200px; */
+color: green;
+font-weight: bold;
+
+}
+.righ{
+    color: green;
+    font-weight: bold;
+
+}
+.purple{
+    color: purple;
+    font-weight: bold;
+
+}
+.blue{
+    color: blue;
+    font-weight: bold;
+}

@@ -14,6 +14,11 @@ import { ECommersComponent } from './components/e-commers/e-commers.component';
 import { DetailsComponent } from './components/details/details.component';
 import { PaymentdetailsComponent } from './components/paymentdetails/paymentdetails.component';
 import { KYCComponent } from './components/kyc/kyc.component';
+import { InventoryComponent } from './Components/inventory/inventory.component';
+import { InvDetailsComponent } from './Components/Inventory/inv-details/inv-details.component';
+import { EditComponent } from './Components/edit/edit.component';
+import { ProductComponent } from './Components/product/product.component';
+import { ProdDetailsComponent } from './Components/product/prod-details/prod-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { KYCComponent } from './components/kyc/kyc.component';
     ECommersComponent,
     DetailsComponent,
     PaymentdetailsComponent,
-    KYCComponent
+    KYCComponent,
+    InventoryComponent,
+    InvDetailsComponent,
+    EditComponent,
+    ProductComponent,
+    ProdDetailsComponent
   ],
   imports: [
     BrowserModule,

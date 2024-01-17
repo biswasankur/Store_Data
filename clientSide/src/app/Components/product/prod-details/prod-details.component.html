@@ -1,0 +1,53 @@
+
+
+<div class="container">
+
+    <div class="card">
+        <nav class="nav">
+            <p class="text">{{showDetails.product_name}}</p>
+        </nav>
+        <img src={{baseUrl}}{{showDetails?.photo}} class="card-img-top" alt="...">
+    </div>
+    <div class="card">
+        <div class="row">
+            <div class="card-body">
+                <h5 class="card-title">&nbsp; &nbsp; {{showDetails.product_name}}</h5>
+                <h5 class="card-title bold">&nbsp; &nbsp; {{showDetails.price}}</h5>
+                <div class="col">
+                    <div class="card-text">Unit<p class="bold"> Metter</p>
+                    </div>
+                    <div class="card-text">Packaging Type<p class="bold"> {{showDetails.packaging_type}}</p>
+                    </div>
+
+                </div>
+                <div class="a">
+                    <p class="card-text">
+                        <label for="quantity">&nbsp; &nbsp;Quantity </label> &nbsp;
+                        <input type="number" class="quantity" id="quantity" name="quantity" value="01" min="01"
+                            max="5" />
+                    </p>
+                    <div class="card-text a">&nbsp; &nbsp;Size<p class="bold">&nbsp; {{showDetails.size}}</p>
+                    </div>
+                </div>
+                <br>
+                <div class="d">
+                    <label for="">Others Details</label>
+                    <p class="left">Youtube Link :</p>
+                    <a routerLink="https://www.youtube.com/" class="yt">
+                        https://www.youtube.com/watch?v=QDYLbPCtYcQ&list=PLMZyn4ePUSpKfWgMlc1B6
+                        JCbKSgsXNrN&index=14</a>
+
+                </div>
+                <br>
+
+
+                <div class="butn">
+                    <a href="#"><button class="btn btn-danger"> Go to Cart</button></a>
+                </div>
+                <div class="buton">
+                    <a href="#"><button class="btn btn-danger"> Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

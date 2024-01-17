@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+}
+h3 {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+}
+
+h2 {
+    background-color: #007BFF;
+    color: white;
+    padding: 5px 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.editable {
+    background-color: green;
+}
+
+.addtable {
+    background-color: rgb(8, 93, 172);
+
+}
+
+.left {
+    float: left;
+    background-color: brown;
+    height: 520px;
+    text-align: center;
+    font-weight: bold;
+    width: 25%;
+}
+
+.right {
+    float: right;
+    margin-right: 20px;
+    width: 73%;
+    /* margin-left: 60%; */
+}
+
+.invent {
+    background-color: black;
+    /* width: 250px; */
+}
+
+.role {
+    color: brown;
+}

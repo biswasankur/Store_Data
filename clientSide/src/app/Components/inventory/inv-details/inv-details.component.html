@@ -1,0 +1,60 @@
+<hr>
+<br><br>
+<div class="right">
+    <h5 class="rig">Green colour fields are editable</h5>
+    <h4 class="lft"><b>User Details </b></h4>
+    <p>User Id :   &nbsp;  {{showInv._id.toString().slice(20,24)}}</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Pub-Inv-Name</th>
+                <th scope="col">pub_Inv_TypeName</th>
+                <th scope="col">pubAdtype_Name</th>
+                <th scope="col">pubAdUnit_Name</th>
+                <th scope="col" class="righ">exch_inv_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="blue">{{showInv.pub_Inv_Name}}</td>
+                <td class="blue">{{showInv.pub_Inv_TypeName}}</td>
+                <td class="blue">{{showInv.pubAdtype_Name}}</td>
+                <td class="blue">{{showInv.pubAdUnit_Name}}</td>
+                <td class="purple"> {{showInv.exch_inv_id}}</td>
+
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th scope="col" class="righ">exch_inv_Name</th>
+                <th scope="col" class="righ">exch_inv_TypeName</th>
+                <th scope="col" class="righ">exch_Type_Name</th>
+                <th scope="col" class="righ"> exch_Adunit_Name</th>
+                <th scope="col" class="righ">Fee %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td class="purple">{{showInv.exch_inv_Name}}</td>
+                <td class="purple">{{showInv.exch_inv_TypeName}}</td>
+                <td class="purple">{{showInv.exch_Type_Name}}</td>
+                <td class="purple">{{showInv.exch_Adunit_Name}}</td>
+
+                <td class="purple">{{showInv.fee}}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th scope="col" class="righ">active_flag</th> 
+                <!-- <th scope="col" class="righ">Action</th>  -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="purple">{{showInv.active_flag}}</td>
+                <a routerLink="/edit/{{showInv._id}}"><button>Edit</button></a>
+            </tr>
+            </tbody>
+    </table>
+</div>

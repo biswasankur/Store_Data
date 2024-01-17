@@ -1,0 +1,78 @@
+<!-- <div class="container">
+
+    <div class="card">
+        <nav class="nav">
+            <p class="text">Ikkat-Fabu 100G</p>
+        </nav>
+        <img src="/assets/img.jpg" class="card-img-top" alt="...">
+    </div>
+    <div class="card">
+        <div class="row">
+            <div class="card-body">
+                <h5 class="card-title">&nbsp; &nbsp;Ikkat-Fabu 100G</h5>
+                <h5 class="card-title bold">&nbsp; &nbsp;1500</h5>
+                <div class="col">
+                    <div class="card-text">Unit<p class="bold"> Metter</p>
+                    </div>
+                    <div class="card-text">Packaging Type<p class="bold"> unit Pice</p>
+                    </div>
+
+                </div>
+                <div class="a">
+                    <p class="card-text">
+                        <label for="quantity">&nbsp; &nbsp;Quantity</label> &nbsp;
+                        <input type="number" class="quantity" id="quantity" name="quantity" value="01" min="01"
+                            max="5" />
+                    </p>
+                    <div class="card-text a">&nbsp; &nbsp;Size<p class="bold">&nbsp; small</p>
+                    </div>
+                </div>
+                <br>
+                <div class="d">
+                    <label for="">Others Details</label>
+                    <p class="left">Youtube Link :</p>
+                    <a routerLink="https://www.youtube.com/" class="yt">
+                        https://www.youtube.com/watch?v=QDYLbPCtYcQ&list=PLMZyn4ePUSpKfWgMlc1B6
+                        JCbKSgsXNrN&index=14</a>
+
+                </div>
+                <br>
+
+
+                <div class="butn">
+                    <a href="#"><button class="btn btn-danger"> Go to Cart</button></a>
+                </div>
+                <div class="buton">
+                    <a href="#"><button class="btn btn-danger"> Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let prod of showProduct">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+            <div class="card p-3">
+                <img src={{baseUrl}}{{prod?.photo}} class="card-img-top" alt="product">
+                <div class="card-body">
+                    <h6 class="card-title">
+                       {{prod.product_name}}
+
+                        <span class="text-danger fw-semibold me-2"></span>
+
+                    </h6>
+                    <h6 class="card-title">
+                    </h6>
+                </div>
+                <a routerLink="/detail/{{prod._id}}">
+                    <div>
+                        <button class="btn btn-primary">Details</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </ng-container>
+    </div>
+</div>

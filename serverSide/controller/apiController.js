@@ -1,9 +1,13 @@
 const storeModel = require('../model/store');
 const UserModel = require('../model/user');
+const InventoryModel=require('../model/inventory')
+const ProductModel=require('../model/product');
+
 const config = require('../config/config');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const { log } = require('console');
 
 //====================================Users Registation======================================================
 const SecurePassword = async (password, req, res) => {
@@ -79,14 +83,6 @@ exports.signUp = async (req, res) => {
     }
 
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -166,3 +162,125 @@ exports.single = async (req, res) => {
     }
 }
 
+
+
+exports.Addinventory=async(req,res)=>{
+    try {
+        const invt = await new InventoryModel({
+            name: req.body.name,
+            pub_Inv_Name: req.body.pub_Inv_Name,
+            pub_Inv_TypeName: req.body.pub_Inv_TypeName,
+            pubAdtype_Name: req.body.pubAdtype_Name,
+            pubAdUnit_Name: req.body.pubAdUnit_Name,
+            exch_inv_id: req.body.exch_inv_id,
+            exch_inv_Name: req.body.exch_inv_Name,
+            exch_inv_TypeName: req.body.exch_inv_TypeName,
+            exch_Type_Name: req.body.exch_Type_Name,
+            exch_Adunit_Name: req.body.exch_Adunit_Name,
+            fee: req.body.fee,
+            active_flag: req.body.active_flag,
+        })
+        const invt_data = await invt.save();
+        res.status(200).send({ success: true, msg: "add inventory data", data: invt_data })
+    } catch (error) {
+        console.log(error);
+        res.status(400).send({ success: false, msg: "not save" })
+    }
+}
+
+
+exports.getInv = async (req, res) => {
+    try {
+        const Result = await InventoryModel.find();
+        res.status(200).json({success:true, msg:"fatch data", data:Result})
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({ success: false, msg: "not found" })
+
+    }
+}
+
+exports.singleinv = async (req, res) => {
+    try {
+        const single_id = await InventoryModel.findById(req.params.id)
+        // console.log(single_id);
+        res.status(200).json({ success: true, msg: 'single data fetch successfilly..!', data: single_id, status: 200 })
+
+    } catch (error) {
+        res.status(201).json({ success: false, msg: 'data not fetched..!' })
+
+    }
+}
+
+
+
+exports.edit = async (req, res) => {
+
+    try {
+        const id = req.params.id
+        const edit = await InventoryModel.findById(id);
+        res.status(200).json({ success: true, msg: "get Single data", data: edit })
+    } catch (error) {
+        res.status(404).json({ success: false, msg: "data not found" })
+    }
+}
+
+
+//update
+exports.update = async (req, res) => {
+    try {
+        const _id = req.params.id
+        const updateUser = await InventoryModel.findByIdAndUpdate(_id, req.body, {
+            new: true
+        });
+        res.status(201).json({ success: true, msg: "Employee succussfully Update", data: updateUser })
+
+    } catch (ex) {
+        res.status(404).json({ success: false, msg: "Employee Not Update" })
+    }
+}
+
+
+
+exports.AddProduct=async(req,res)=>{
+    try {
+        const product = await new ProductModel({
+            product_name: req.body.product_name,
+            price: req.body.price,
+            quantity: req.body.quantity,
+            unit: req.body.unit,
+            size: req.body.size,
+            packaging_type: req.body.packaging_type,
+        })
+        if (req.file) {
+            product.photo = req.file.path
+        }
+        const product_data = await product.save();
+        res.status(200).send({ success: true, msg: "Add Product Successfully", data: product_data })
+    } catch (error) {
+        res.status(400).send({ success: false, msg: "not save" })
+    }
+}
+
+exports.getproduct = async (req, res) => {
+
+    try {
+        const product = await ProductModel.find();
+        res.status(200).json({ success: true, msg: "Get Product", data: product })
+    } catch (error) {
+        res.status(404).json({ success: false, msg: "data not found" })
+    }
+}
+
+
+exports.singleProduct = async (req, res) => {
+    try {
+        const single_id = await ProductModel.findById(req.params.id)
+        console.log(single_id);
+        res.status(200).json({ success: true, msg: 'single data fetch successfilly..', data: single_id, status: 200 })
+
+    } catch (error) {
+        res.status(201).json({ success: false, msg: 'data not fetched..!' })
+
+    }
+}
