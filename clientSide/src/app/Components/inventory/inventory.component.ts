@@ -8,6 +8,7 @@ import { InventoryService } from 'src/app/Service/inventory.service';
 })
 export class InventoryComponent implements OnInit{
   showInv: any;
+  
   constructor(private invSer: InventoryService) { }
   ngOnInit(): void {
     this.invSer.getAllInv().subscribe((res: any) => {
