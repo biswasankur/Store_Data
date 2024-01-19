@@ -111,6 +111,7 @@ exports.store = async (req, res) => {
     }
 }
 
+
 exports.getStore = async (req, res) => {
     try {
         const stores = await storeModel.find()
